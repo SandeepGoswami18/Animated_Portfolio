@@ -1,4 +1,12 @@
 import React from "react";
+import img1 from "../assets/img1.jpg";
+import img2 from "../assets/img2.jpg";
+import img3 from "../assets/img3.jpg";
+
+import photo1 from "../assets/photo1.jpg";
+import photo2 from "../assets/photo2.png";
+import photo3 from "../assets/photo3.png";
+
 import { motion, useScroll, AnimatePresence } from "framer-motion";
 
 const MH3 = motion.h3;
@@ -30,21 +38,22 @@ export default function Projects() {
       {
         title: "Music Studio",
         bgColor: "#2A0B1E",
-         image: isMobile ? "images/photo1.jpg" : "images/img1.jpg",
+        image: isMobile ? photo1 : img1,
       },
       {
         title: "E-commerce",
         bgColor: "#3884d3",
-        image: isMobile ? "images/photo2.png" : "images/img2.jpg",
+        image: isMobile ? photo2 : img2,
       },
       {
         title: "Simple Portfolio",
         bgColor: "#dc9317",
-        image: isMobile ? "images/photo3.png" : "images/img3.jpg",
+        image: isMobile ? photo3 : img3,
       },
     ],
     [isMobile]
   );
+
 
   const sceneRef = React.useRef(null);
   const { scrollYProgress } = useScroll({
