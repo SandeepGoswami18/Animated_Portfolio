@@ -2,7 +2,6 @@ import React, { useMemo, useEffect, useState } from "react";
 import ParticlesBackground from "../components/ParticleBackground";
 import { motion } from "framer-motion";
 import { FaGithub, FaLinkedinIn, FaXTwitter } from "react-icons/fa6";
-import avator from "../assets/avator.png";
 
 const socials = [
   { Icon: FaXTwitter, label: "X", href: "https://x.com/home" },
@@ -209,14 +208,13 @@ export default function Home() {
 
             {/* avatar */}
             <motion.img
-              src={avator}
+              src="/images/avator.png"
               alt="Sandeep Kumar"
               className="w-[270px] h-[270px] rounded-full object-cover select-none"
               whileHover={{
                 filter:
                   "drop-shadow(0 0 18px rgba(255,176,0,0.75)) drop-shadow(0 0 40px rgba(255,159,26,0.55))",
               }}
-              //motiondiv
             />
           </motion.div>
         </motion.div>

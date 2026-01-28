@@ -1,6 +1,5 @@
 import { useEffect, useState, useRef } from "react";
 import OverlayMenu from "./OverlayMenu";
-import Logo from "../assets/Logo.png";
 import { FiMenu } from "react-icons/fi";
 
 export default function Navbar() {
@@ -11,7 +10,6 @@ export default function Navbar() {
   const lastScrollY = useRef(0);
   const timerId = useRef(null);
 
-  // ✅ Portfolio Sections
   const navLinks = [
     { name: "Home", href: "#home" },
     { name: "About", href: "#about" },
@@ -80,20 +78,17 @@ export default function Navbar() {
           visible ? "translate-y-0" : "-translate-y-full"
         }`}
       >
-        {/* ✅ LeetCode style strip */}
         <div className="w-full bg-[#1f1f1f]/95 backdrop-blur-md border-b border-white/10">
           <div className="max-w-7xl mx-auto px-5 lg:px-10 h-[64px] flex items-center justify-between">
-            {/* ✅ LEFT LOGO */}
             <div className="flex items-center gap-2">
-              <img src={Logo} alt="logo" className="w-8 h-8" />
+              {/* ✅ Changed to public path */}
+              <img src="/images/Logo.png" alt="logo" className="w-8 h-8" />
               <h1 className="hidden sm:block font-medium text-[18px] tracking-wide
 text-transparent bg-clip-text bg-gradient-to-r from-[#ffb000] via-[#ffd36a] to-[#fff1c1]">
-  Sandeep
-</h1>
-
+                Sandeep
+              </h1>
             </div>
 
-            {/* ✅ CENTER MENU (Desktop) */}
             <div className="hidden lg:flex items-center gap-8 text-gray-300 font-medium">
               {navLinks.map((item) => (
                 <a
@@ -106,9 +101,7 @@ text-transparent bg-clip-text bg-gradient-to-r from-[#ffb000] via-[#ffd36a] to-[
               ))}
             </div>
 
-            {/* ✅ RIGHT SIDE */}
             <div className="flex items-center gap-4">
-              {/* ✅ Reach Out button (gold LeetCode style) */}
               <a
                 href="#contact"
                 className="hidden lg:block px-4 py-2 rounded-full text-black font-semibold
@@ -118,7 +111,6 @@ text-transparent bg-clip-text bg-gradient-to-r from-[#ffb000] via-[#ffd36a] to-[
                 Reach Out
               </a>
 
-              {/* ✅ Mobile Menu Icon */}
               <button
                 onClick={() => setMenuOpen(true)}
                 className="lg:hidden text-white text-3xl"
@@ -131,7 +123,6 @@ text-transparent bg-clip-text bg-gradient-to-r from-[#ffb000] via-[#ffd36a] to-[
         </div>
       </nav>
 
-      {/* ✅ Overlay Menu (Mobile) */}
       <OverlayMenu isOpen={menuOpen} onClose={() => setMenuOpen(false)} />
     </>
   );
