@@ -59,12 +59,14 @@ export default function Contact() {
 
           {/* NETLIFY FORM */}
           <form
-            name="contact"
-            method="POST"
-            data-netlify="true"
-            netlify-honeypot="bot-field"
-            className="flex flex-col gap-5"
-          >
+  name="contact"
+  method="POST"
+  data-netlify="true"
+  netlify-honeypot="bot-field"
+  action="/#contact"
+  className="flex flex-col gap-5"
+>
+
             <input type="hidden" name="form-name" value="contact" />
             <input type="hidden" name="bot-field" />
 
