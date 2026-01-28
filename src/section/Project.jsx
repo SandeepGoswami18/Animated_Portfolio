@@ -30,17 +30,17 @@ export default function Projects() {
       {
         title: "Music Studio",
         bgColor: "#2A0B1E",
-         image: isMobile ? "/images/photo1.jpg" : "/images/img1.jpg",
+         image: isMobile ? "images/photo1.jpg" : "images/img1.jpg",
       },
       {
         title: "E-commerce",
         bgColor: "#3884d3",
-        image: isMobile ? "/images/photo2.png" : "/images/img2.jpg",
+        image: isMobile ? "images/photo2.png" : "images/img2.jpg",
       },
       {
         title: "Simple Portfolio",
         bgColor: "#dc9317",
-        image: isMobile ? "/images/photo3.png" : "/images/img3.jpg",
+        image: isMobile ? "images/photo3.png" : "images/img3.jpg",
       },
     ],
     [isMobile]
