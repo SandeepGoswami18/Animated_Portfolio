@@ -6,14 +6,14 @@ export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    service: "Web Development",
+    service: "Web Development", // default value
     budget: "",
     idea: "",
   });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((p) => ({ ...p, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   return (
@@ -57,15 +57,16 @@ export default function Contact() {
             Let’s Work Together
           </h2>
 
-          {/* ✅ NETLIFY FORM (FIXED) */}
+          {/* NETLIFY FORM */}
           <form
             name="contact"
             method="POST"
             data-netlify="true"
             netlify-honeypot="bot-field"
-            action="/thank-you"
+            action="/thank-you" // redirect to thank-you page
             className="flex flex-col gap-5"
           >
+            {/* Hidden fields for Netlify */}
             <input type="hidden" name="form-name" value="contact" />
             <input type="hidden" name="bot-field" />
 
@@ -96,15 +97,9 @@ export default function Contact() {
               onChange={handleChange}
               className="p-3 rounded-md bg-white/10 border border-yellow-400/20 text-white focus:outline-none"
             >
-              <option value="Web Development" className="text-black bg-white">
-                Web Development
-              </option>
-              <option value="Mobile Application" className="text-black bg-white">
-                Mobile Application
-              </option>
-              <option value="Others" className="text-black bg-white">
-                Others
-              </option>
+              <option value="Web Development">Web Development</option>
+              <option value="Mobile Application">Mobile Application</option>
+              <option value="Others">Others</option>
             </select>
 
             <input
