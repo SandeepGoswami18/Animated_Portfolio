@@ -6,7 +6,7 @@ export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    service: "Web Development", // ✅ default selected
+    service: "Web Development",
     budget: "",
     idea: "",
   });
@@ -57,16 +57,15 @@ export default function Contact() {
             Let’s Work Together
           </h2>
 
-          {/* NETLIFY FORM */}
+          {/* ✅ NETLIFY FORM (FIXED) */}
           <form
-  name="contact"
-  method="POST"
-  data-netlify="true"
-  netlify-honeypot="bot-field"
-  action="/#contact"
-  className="flex flex-col gap-5"
->
-
+            name="contact"
+            method="POST"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+            action="/thank-you"
+            className="flex flex-col gap-5"
+          >
             <input type="hidden" name="form-name" value="contact" />
             <input type="hidden" name="bot-field" />
 
@@ -90,7 +89,6 @@ export default function Contact() {
               className="p-3 rounded-md bg-white/10 border border-yellow-400/20 focus:outline-none"
             />
 
-            {/* ✅ FINAL FIXED SELECT */}
             <select
               name="service"
               required
